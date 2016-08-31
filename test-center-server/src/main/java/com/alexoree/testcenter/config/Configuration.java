@@ -17,7 +17,7 @@ public class Configuration {
         instance = new Configuration();
         instance.setExpectedNodes(Integer.parseInt(properties.getProperty("expect.devices")));
         instance.setDiscoveryTimeout(Integer.parseInt(properties.getProperty("disco.timeout")));
-        instance.setDiscoveryTimeout(Integer.parseInt(properties.getProperty("disco.port")));
+        instance.setListenPortDiscovery(Integer.parseInt(properties.getProperty("disco.port")));
 
     }
 
