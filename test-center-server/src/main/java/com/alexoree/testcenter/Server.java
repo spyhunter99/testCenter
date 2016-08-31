@@ -66,7 +66,7 @@ public class Server implements BroadcastReceiver.Callback {
     }
 
     private void startDiscovery() {
-        br = new BroadcastReceiver(this);
+        br = new BroadcastReceiver(this, Configuration.getInstance().getListenPortDiscovery());
     }
 
     public void loadConfiguration(String s) throws IOException {

@@ -29,3 +29,4 @@ Project structure (app to be tested)
    - Release flavor - has the same API as the debug version but is NOOP
 
 Each device emmits a UDP broadcast heart beat
+

@@ -1,7 +1,6 @@
 description = 'Test Center Server'
 
-apply plugin: 'java'
-apply plugin: 'distribution'
+apply plugin: 'application'
 
 compileJava {
     sourceCompatibility = "${project.property('compileJava.sourceCompatibility')}"
@@ -15,4 +14,13 @@ dependencies {
 }
 
 
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.alexoree.testcenter.Server'
+        )
+    }
+}
+mainClassName = 'com.alexoree.testcenter.Server'
 //todo main class
