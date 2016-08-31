@@ -1,0 +1,18 @@
+description = 'Test Center Server'
+
+apply plugin: 'java'
+apply plugin: 'distribution'
+
+compileJava {
+    sourceCompatibility = "${project.property('compileJava.sourceCompatibility')}"
+    targetCompatibility = "${project.property('compileJava.targetCompatibility')}"
+}
+
+dependencies {
+    compile "org.apache.commons:commons-lang3:${project.property('commons-lang3.version')}"
+
+    testCompile "junit:junit:${project.property('junit.version')}"
+}
+
+
+//todo main class

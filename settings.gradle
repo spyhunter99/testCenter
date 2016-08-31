@@ -1,0 +1,3 @@
+rootProject.name = 'testCenter'
+
+include ':test-center-server'
