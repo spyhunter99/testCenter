@@ -8,9 +8,9 @@ Test Center - An experimental distributed testing solution for Java/Android appl
 - Continous integration friendly
 - Support Android application testing similiar to running connectedCheck against a device
 - Support device to device interactions such as
- - Device #1 clicks a button, which propigates a change somehow to Device #2
- - Device #2 waits for the change, if the change is received and the view is updated, success. If change has not occurred after a given period of time, mark the test as a failure and continue.
- - 
+ - Device 1 clicks a button, which propigates a change somehow to Device #2
+ - Device 2 waits for the change, if the change is received and the view is updated, success. If change has not occurred after a given period of time, mark the test as a failure and continue.
+
 
 ## Base assumptions
 
