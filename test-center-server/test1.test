@@ -1,0 +1,39 @@
+# lines starting with a pound are considered comments
+# each line represents a command to send to your app.
+# here's some examples
+
+# each command will in turn be reflected and executed on the device/app
+# each command must return a true/false or throw an exception
+# true = the statement was successful, keep going
+# false = something failed was or incorrect
+
+# there's a few build in commands
+
+# all devices, log a message
+log message
+
+# all devices, call method1
+exec method1
+
+# all devices toast
+toast hello World
+
+# pauses test execution server side for 10 seconds
+wait 10000
+
+# method1 finds a button on screen and clicks it, on device[0]
+# it also sends a message to the other devices
+exec dev[0] method1
+
+# method1Response, waits for the message from dev[0] and triggers some action
+# waits up to 10 seconds for all devices to report back
+exec dev[1-n] method1Response timeout 10000
+
+
+exec dev[0] methodLogin bob
+
+exec dev[0] methodPassword password1
+
+exec dev[0] methodDoLogin
+
+exec dev[n] verifyUserOnline bob

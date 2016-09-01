@@ -10,5 +10,6 @@ android {
 }
 
 dependencies {
+    compile project(":test-center-messages");
     testCompile "junit:junit:${project.property('junit.version')}"
 }

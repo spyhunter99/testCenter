@@ -8,6 +8,7 @@ compileJava {
 }
 
 dependencies {
+    compile project(":test-center-messages");
     compile "org.apache.commons:commons-lang3:${project.property('commons-lang3.version')}"
 
     testCompile "junit:junit:${project.property('junit.version')}"
