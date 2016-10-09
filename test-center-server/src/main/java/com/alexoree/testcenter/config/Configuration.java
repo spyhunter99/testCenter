@@ -18,6 +18,8 @@ public class Configuration {
         instance.setExpectedNodes(Integer.parseInt(properties.getProperty("expect.devices")));
         instance.setDiscoveryTimeout(Integer.parseInt(properties.getProperty("disco.timeout")));
         instance.setListenPortDiscovery(Integer.parseInt(properties.getProperty("disco.port")));
+        instance.setCleanupScript(properties.getProperty("cleanupScript"));
+        instance.setInitScript(properties.getProperty("initScript"));
 
     }
 
@@ -40,6 +42,25 @@ public class Configuration {
     private int expectedNodes;
     private int listenPortDiscovery=4000;
     private int discoveryTimeout=10 * 60 * 1000;    //10 minutes
+    private String initScript;
+
+    public String getCleanupScript() {
+        return cleanupScript;
+    }
+
+    public void setCleanupScript(String cleanupScript) {
+        this.cleanupScript = cleanupScript;
+    }
+
+    public String getInitScript() {
+        return initScript;
+    }
+
+    public void setInitScript(String initScript) {
+        this.initScript = initScript;
+    }
+
+    private String cleanupScript;
 
     public int getDiscoveryTimeout() {
         return discoveryTimeout;

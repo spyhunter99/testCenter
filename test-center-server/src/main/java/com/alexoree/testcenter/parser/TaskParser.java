@@ -20,6 +20,60 @@ public class TaskParser {
             if (line.trim().startsWith("#")) {
                 //ignore it, comment
             } else {
+                String working = line.trim();
+                if (line.startsWith("wait")){
+                    try {
+                        Task t = new Task();
+
+                        t.method = "serverWait";
+                        t.arguments = new String[1];
+                        t.arguments[0] = line.substring(line.indexOf(" ")).trim();
+
+                        r.add(t);
+                    }catch (Exception ex){
+                        throw new Exception("method 'wait' requires a period of time",ex);
+                    }
+                }
+                if (line.startsWith("log")){
+                    try {
+                        Task t = new Task();
+
+                        t.method = "log";
+                        t.arguments = new String[1];
+                        t.arguments[0] = line.substring(line.indexOf(" ")).trim();
+
+                        r.add(t);
+                    }catch (Exception ex){
+                        throw new Exception("method 'log' requires a some text",ex);
+                    }
+                }
+                if (line.startsWith("toast")){
+                    try {
+                        Task t = new Task();
+                        t.method = "toast";
+                        t.arguments = new String[1];
+                        t.arguments[0] = line.substring(line.indexOf(" ")).trim();
+                        r.add(t);
+                    }catch (Exception ex){
+                        throw new Exception("method 'toast' requires a some text",ex);
+                    }
+                }
+                if (line.startsWith("exec")){
+                    try {
+                        Task t = new Task();
+
+                        t.method = "exec";
+                        t.arguments = new String[1];
+                        t.arguments[0] = line.substring(line.indexOf(" ")).trim();
+                        String[] remains = parseDevices(t.arguments[0]);
+                        if (remains.length==2)
+                            t.arguments[0]
+
+                        r.add(t);
+                    }catch (Exception ex){
+                        throw new Exception("method 'toast' requires a some text",ex);
+                    }
+                }
 
 
             }

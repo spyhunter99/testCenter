@@ -76,7 +76,9 @@ public class TestCenterClientService  implements Runnable{
             if (topMostActivity!=null){
                 Method[] methods = topMostActivity.getClass().getMethods();
                 for (int i=0; i < methods.length; i++){
-                    if (methods[i].getName().equals(exec.)
+                    if (methods[i].getName().equals(exec.method){
+                        methods[i].invoke(topMostActivity, )
+                    }
                 }
             }
         }
